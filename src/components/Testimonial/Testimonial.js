@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import {Data} from './Data'
 import "./Testimonial.css"
 // import required modules
-import { Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 
 const Testimonial = () => {
   return (
@@ -25,6 +25,10 @@ const Testimonial = () => {
                 loop={true}
                 grabCursor={true}
                 spaceBetween={24}
+                autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+                }}
                 pagination={{
                 clickable: true,
                 }}
@@ -38,7 +42,8 @@ const Testimonial = () => {
                 },
                 
                 }}
-                modules={[Pagination]}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
         
                 >
                     {Data.map(({id, image, title, description}) => {
